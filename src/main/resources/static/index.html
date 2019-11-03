@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>job run 1</title>
+</head>
+<body>
+<input type="text" id="msg">
+<button onclick="runJob1()">Run Job1</button>
+<input type="text" id="msg2">
+<button onclick="runJob2()">Run Job2</button>
+<script type="text/javascript">
+    var baseurl = "http://localhost:8080";
+    var xhttp = new XMLHttpRequest();
+
+    function runJob1() {
+        var msg = document.getElementById("msg").value;
+        var url = baseurl + '/job/' + msg;
+        xhttp.open('GET', url, true);
+        xhttp.send();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log('Job status: ' + this.responseText);
+            }
+        }
+    }
+
+    function runJob2() {
+        var msg = document.getElementById("msg2").value;
+        var url = baseurl + '/job2/' + msg;
+        xhttp.open('GET', url, true);
+        xhttp.send();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log('Job status: ' + this.responseText);
+            }
+        }
+    }
+</script>
+</body>
+</html>
