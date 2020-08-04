@@ -3,7 +3,7 @@ package com.example.springbatch.jobOperator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class SpringbatchApplication {
 
     public static void main(String[] args) {
